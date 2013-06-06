@@ -1,0 +1,5 @@
+#!ipxe
+dhcp
+set 209:string cfg/arch.cfg
+set 210:string http://releng.archlinux.org/pxeboot/boot/
+chain ${210:string}pxelinux.0
