@@ -1,0 +1,18 @@
+default-lease-time 600;
+max-lease-time 7200;
+
+subnet 10.10.10.0 netmask 255.255.255.0 {
+  range 10.10.10.151 10.10.10.205;
+}
+
+option domain-name-servers 8.8.8.8;
+
+host netbook {
+  hardware ethernet ??:??:??:??:??:??;
+  filename "pxelinux.0";
+  next-server 10.10.10.1; # the IP address of your TFTP server
+  fixed-address 10.10.10.202;
+  option subnet-mask 255.255.255.0;
+  option broadcast-address 10.10.10.255;
+  option routers 10.10.10.1;
+}
