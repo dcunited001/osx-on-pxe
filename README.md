@@ -38,9 +38,16 @@ I don't have a DVD-R and my Asus UL50vt doesn't feel like booting from USB.  So 
 
 1. Install isc-dhcp with `brew install isc-dhcp`
 1. Copy example conf with `cp [git repo root]/dchpd.conf.example /usr/local/etc/dhcpd.conf`
-1. Pupulate the Mac Address *??:??:??:??:??:??*
-1. Start the server with
+1. Populate the Mac Address *??:??:??:??:??:??*
+1. Start the server with `sudo /usr/local/sbin/dhcpd -f -d -cf /usr/local/etc/dhcpd.conf`
 
 After you're done, uninstall the DHCP server with `brew uninstall isc-dhcp`
 
 #### Setup Eth0 Interface
+
+1. With the example config, set your IP to `10.10.10.1`
+1. Turn on Apple "Internet Sharing".
+  - Share your Wifi Connection with eth0.
+  - Don't forget to turn it off.  Your computer won't be able to sleep at night if you don't, according to Apple.
+1. Plug it in, plug it in
+1. Then get frustrated when Apple "Internet Sharing" doesn't actually work.
